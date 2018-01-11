@@ -14,7 +14,7 @@ class Nav extends Component {
       <div>
       <nav className="teal lighten-2">
       <div className="nav-wrapper container">
-      <Link className="brand-logo" to="/">IA In JV</Link>
+      <Link className="brand-logo" to="/veille-ia-jv">IA In JV</Link>
       <ul id="nav-mobile" className="right hide-on-med-and-down">
       <li><Link to="/veille-ia-jv/actualite">Actualité</Link></li>
       </ul>
