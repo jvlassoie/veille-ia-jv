@@ -16,14 +16,14 @@ class Nav extends Component {
       <div className="nav-wrapper container">
       <Link className="brand-logo" to="/">IA In JV</Link>
       <ul id="nav-mobile" className="right hide-on-med-and-down">
-      <li><Link to="/actualite">Actualité</Link></li>
+      <li><Link to="/veille-ia-jv/actualite">Actualité</Link></li>
       </ul>
       </div>
       </nav>
       <br/>
       <div>
-      <Route exact path="/"  component={Home}/>
-      <Route path="/actualite"  component={Actualite}/>
+      <Route exact path="/veille-ia-jv"  component={Home}/>
+      <Route path="/veille-ia-jv/actualite"  component={Actualite}/>
       </div>
       </div>
       </Router>
