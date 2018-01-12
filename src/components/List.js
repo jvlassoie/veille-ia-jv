@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import html_specialchars from 'html-specialchars';
 import Loader from './Loader';
+import Moment from 'react-moment';
+import moment from 'moment/min/moment-with-locales';
 
 
 class List extends Component {
@@ -13,7 +15,13 @@ class List extends Component {
 			loader: true
 		};
 
+		Moment.globalMoment = moment;
+		Moment.globalLocale = 'fr';
+
+
 	}
+
+
 
 
 	componentWillMount() {
@@ -32,20 +40,30 @@ class List extends Component {
 
 	getList(){
 		return	(this.state.items.map((item, index) =>
-					<div className="row" key={index}>
-					<div className="col s12">
-					<div className="card blue-grey darken-1">
-					<div className="card-content white-text">
-					<span className="card-title" dangerouslySetInnerHTML={{ __html: item.title }} />
-					<p dangerouslySetInnerHTML={{ __html: item.content }} />
-					</div>
-					<div className="card-action">
-					<a href={html_specialchars.unescape(item.link)} >Voir plus</a>
-					</div>
-					</div>
-					</div>
-					</div>
-					))
+			<div className="row" key={index}>
+			<div className="col s12">
+			<div className="card blue-grey darken-1">
+			<div className="card-content white-text">
+			<span className="card-title" dangerouslySetInnerHTML={{ __html: item.title }} />
+			<div className="row">
+			<div className="valign-wrapper col s12">
+			<i className="material-icons">access_time</i>
+			<Moment className="grey-text text-lighten-1" style={ {
+				fontWeight: 'bold',
+				fontStyle: 'italic',
+				paddingLeft: '1em'
+			} } fromNow ago>{item.pubDate}</Moment>
+			</div>
+			</div>
+			<p dangerouslySetInnerHTML={{ __html: item.content }} />
+			</div>
+			<div className="card-action">
+			<a href={html_specialchars.unescape(item.link)} >Voir plus</a>
+			</div>
+			</div>
+			</div>
+			</div>
+			))
 	}
 
 	render() {
@@ -62,17 +80,17 @@ class List extends Component {
 				</div>
 				
 				) : 
-				
-				this.getList()
 
-				}
+			this.getList()
 
-
-			</div>
-				
-
-				)
-			}
 		}
 
-		export default List;
+
+		</div>
+
+
+		)
+	}
+}
+
+export default List;
