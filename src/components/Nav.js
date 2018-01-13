@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Link
+  NavLink
 } from 'react-router-dom';
 import Actualite from './Actualite'
 import Home from './Home'
@@ -10,33 +10,45 @@ import 'materialize-css/dist/js/materialize.min.js';
 
 class Nav extends Component {
 
+  constructor(props){
+
+    super(props)
+    this.state = {
+      activation: false
+    }
+
+  }
 
   componentDidMount(){
 
     window.jQuery(".button-collapse").sideNav({
-       closeOnClick: true
-    })
+     closeOnClick: true
+   })
 
   }
 
 
 
+
   render() {
 
+    const styleActivation = {
+      fontWeight: "bold"
+    }
 
     return (
       <Router>
       <div>
       <nav className="teal lighten-2">
       <div className="nav-wrapper container">
-      <Link className="brand-logo" to="/veille-ia-jv">IA In JV</Link>
+      <NavLink className="brand-logo" to="/veille-ia-jv">IA In JV</NavLink>
       <a href="" data-activates="nav-mobile" className="button-collapse"><i className="material-icons">menu</i></a>
       <ul className="right hide-on-med-and-down">
-      <li><Link to="/veille-ia-jv/actualite">Actualité</Link></li>
+      <li><NavLink to="/veille-ia-jv/actualite" activeStyle={styleActivation} >Actualité</NavLink></li>
       </ul>
       <ul className="side-nav" id="nav-mobile">
-      <li><Link to="/veille-ia-jv">Accueil</Link></li>
-      <li><Link to="/veille-ia-jv/actualite">Actualité</Link></li>
+      <li><NavLink exact to="/veille-ia-jv" activeStyle={styleActivation}  >Accueil</NavLink></li>
+      <li><NavLink to="/veille-ia-jv/actualite" activeStyle={styleActivation}  >Actualité</NavLink></li>
       </ul>
       </div>
       </nav>

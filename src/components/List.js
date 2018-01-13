@@ -29,7 +29,6 @@ class List extends Component {
 		const urlRss = "https://www.google.fr/alerts/feeds/01522933145906137599/16769526041914132694";
 		axios.get(urlBase + urlRss)
 		.then(res => {
-			console.log(res.data.items)
 			this.setState({
 				items : res.data.items,
 				loader:false
