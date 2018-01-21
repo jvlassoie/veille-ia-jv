@@ -44,11 +44,11 @@ class Nav extends Component {
       <NavLink className="brand-logo" to="/veille-ia-jv">IA In JV</NavLink>
       <a href="" data-activates="nav-mobile" className="button-collapse"><i className="material-icons">menu</i></a>
       <ul className="right hide-on-med-and-down">
-      <li><NavLink to="/veille-ia-jv/actualite" activeStyle={styleActivation} >Actualité</NavLink></li>
+      <li><NavLink to="/veille-ia-jv/actualite" activeStyle={styleActivation} >Actualite</NavLink></li>
       </ul>
       <ul className="side-nav" id="nav-mobile">
       <li><NavLink exact to="/veille-ia-jv" activeStyle={styleActivation}  >Accueil</NavLink></li>
-      <li><NavLink to="/veille-ia-jv/actualite" activeStyle={styleActivation}  >Actualité</NavLink></li>
+      <li><NavLink to="/veille-ia-jv/actualite" activeStyle={styleActivation}  >Actualite</NavLink></li>
       </ul>
       </div>
       </nav>

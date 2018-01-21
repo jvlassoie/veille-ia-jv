@@ -17,6 +17,7 @@ class List extends Component {
 
 		Moment.globalMoment = moment;
 		Moment.globalLocale = 'fr';
+		this.urlRss = this.props.urlRss;
 
 
 	}
@@ -26,8 +27,8 @@ class List extends Component {
 
 	componentWillMount() {
 		const urlBase = "https://api.rss2json.com/v1/api.json?rss_url=";
-		const urlRss = "https://www.google.fr/alerts/feeds/01522933145906137599/16769526041914132694";
-		axios.get(urlBase + urlRss)
+		
+		axios.get(urlBase + this.urlRss)
 		.then(res => {
 			this.setState({
 				items : res.data.items,
