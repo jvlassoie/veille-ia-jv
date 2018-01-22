@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import List from "./List"
-
+import Nav from "./Nav"
 
 class Actualite extends Component {
 	
 
 	render() {
 		return (
+		<div>	
+    	<Nav />
 		<div className="container">
 
 		<h3 className="center-align">
@@ -27,6 +29,7 @@ class Actualite extends Component {
 		intelligence artificiel jeu
 		</div>
 		<List urlRss="https://www.google.fr/alerts/feeds/01522933145906137599/314152243662205623" />
+		</div>
 		</div>
 );
 	}

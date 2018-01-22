@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
+import 'materialize-css/dist/js/materialize.min.js';
+
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Route,
   NavLink
 } from 'react-router-dom';
-import Actualite from './Actualite'
-import Home from './Home'
-import 'materialize-css/dist/js/materialize.min.js';
 
 class Nav extends Component {
 
@@ -37,7 +36,6 @@ class Nav extends Component {
     }
 
     return (
-      <Router>
       <div>
       <nav className="teal lighten-2">
       <div className="nav-wrapper container">
@@ -45,20 +43,17 @@ class Nav extends Component {
       <a href="" data-activates="nav-mobile" className="button-collapse"><i className="material-icons">menu</i></a>
       <ul className="right hide-on-med-and-down">
       <li><NavLink to="/veille-ia-jv/actualite" activeStyle={styleActivation} >Actualite</NavLink></li>
+      <li><NavLink to="/veille-ia-jv/presentation" activeStyle={styleActivation} >Presentation</NavLink></li>
       </ul>
       <ul className="side-nav" id="nav-mobile">
       <li><NavLink exact to="/veille-ia-jv" activeStyle={styleActivation}  >Accueil</NavLink></li>
       <li><NavLink to="/veille-ia-jv/actualite" activeStyle={styleActivation}  >Actualite</NavLink></li>
+      <li><NavLink to="/veille-ia-jv/presentation" activeStyle={styleActivation}  >Presentation</NavLink></li>
       </ul>
       </div>
       </nav>
-      <br/>
-      <div>
-      <Route exact path="/veille-ia-jv"  component={Home}/>
-      <Route path="/veille-ia-jv/actualite"  component={Actualite}/>
+     
       </div>
-      </div>
-      </Router>
       );
   }
 }
