@@ -1,0 +1,1 @@
+https://jvlassoie.github.io/veille-ia-jv/

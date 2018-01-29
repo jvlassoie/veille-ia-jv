@@ -39,6 +39,10 @@ class List extends Component {
 
 
 	getList(){
+
+		if (this.state.items.length > 0) {
+
+
 		return	(this.state.items.map((item, index) =>
 			<div className="row" key={index}>
 			<div className="col s12">
@@ -64,6 +68,12 @@ class List extends Component {
 			</div>
 			</div>
 			))
+		}else{
+		
+			return (
+				<p className="row center-align" style={{fontStyle: "italic"}}>Rien pour l'instant</p>
+				)
+		}
 	}
 
 	render() {

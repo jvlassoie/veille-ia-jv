@@ -24,7 +24,6 @@
   "homepage": "https://jvlassoie.github.io/veille-ia-jv",
   "devDependencies": {
     "axios": "^0.17.1",
-    "materialize-css": "^0.100.2",
-    "spectacle": "^4.0.5"
+    "materialize-css": "^0.100.2"
   }
 }
