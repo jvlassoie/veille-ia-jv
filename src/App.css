@@ -1,3 +1,14 @@
 .pageSize{
 	font-size: 1.4em;
 }
+.Strong_20_Emphasis{
+	font-weight: bold;
+}
+.Sect1{
+	background-color: #546E7A;
+	padding: 10px 30px;
+	margin-bottom: 40px;
+	color: #FFFFFF;
+	box-shadow:  8px 5px 25px #546E7A;
+	overflow: break-word;
+}

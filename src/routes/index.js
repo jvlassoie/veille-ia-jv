@@ -10,6 +10,7 @@ import {
 
 import Actualite from './../components/Actualite'
 import Home from './../components/Home'
+import Article from './../components/Article'
 
 
 export default () => 
@@ -18,7 +19,8 @@ export default () =>
 	<Switch>
 	<Route path="/veille-ia-jv" exact component={Home}/>
 	<Route path="/veille-ia-jv/actualite" exact component={Actualite}/>
-	<Route component={Home}/>
+	<Route path="/veille-ia-jv/article" exact component={Article}/>
+	
 	</Switch>
 	</BrowserRouter>
 	);

@@ -12,7 +12,7 @@ class Actualite extends Component {
 		<div className="container">
 
 		<h3 className="center-align">
-		Google Alerts
+		Flux journalier
 		</h3>
 		{/*mot: intelligence artificiel*/}
 		<div className="chip">
